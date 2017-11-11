@@ -1,0 +1,201 @@
+body{
+	margin: 0;
+}
+
+h1{
+	text-transform: uppercase;
+	font-size: 35px;
+}
+
+textarea{
+	resize: none;
+}
+
+#header{
+	height: 100vh;
+	background-image: url(../img/headerBgi.png);
+	background-position: center center;
+	background-size: cover;
+}
+
+.header_inner{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	width: 60%;
+	margin: auto;
+	color: #C5C5C5;
+}
+
+.header__header{
+	display: flex;
+	justify-content: space-between;
+
+	width: 100%;
+	margin-top: 30px;
+}
+
+.header__logo{
+
+}
+
+.header__nav{
+	display: flex;
+	justify-content: space-between;
+
+	width: 70%;
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+}
+
+.header__content{
+	width: 100%;
+	margin-top: 20vh;
+}
+
+.header__title h1{
+	color: white;
+	margin: 0;
+}
+
+.header__title h1 span{
+	color: #FFBA00;
+}
+
+
+/*-----------------------------------------------*/
+
+
+#details{
+	background-color: #E8E8E8;
+}
+
+.details_inner{
+	display: flex;
+	flex-direction: column;
+
+	width: 60%;
+	height: 100vh;
+	margin: auto;
+}
+
+.details__content{
+	display: flex;
+	justify-content: space-around;
+}
+
+.details__pass{
+	width: 50%;
+}
+
+.details__pass img{
+	width: 100%;
+}
+
+.details__form{
+	width: 35%;
+}
+
+.details__form form{
+	display: flex;
+	flex-direction: column;
+}
+
+.form-item{
+	display: flex;
+	flex-direction: column;
+
+	margin-bottom: 14px;
+	width: 100%;
+}
+
+.form-item_double{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.form-item_double div{
+	display: flex;
+	flex-direction: column;
+	width: 45%
+}
+
+.form-item label{
+	margin-bottom: 3px; 
+}
+
+.form-item input{
+	border: 2px solid #E8E8E8;
+	border-radius: 3px;
+}
+
+.form-item button{
+	height: 30px;
+
+	border: none;
+	border-radius: 3px;
+
+	font-size: 17px;
+	font-weight: bold;
+	background-color: #FFBA00;
+}
+
+/*----------------------------------------*/
+
+#how-work{
+	background-color: #FFBA00;
+}
+
+.how-work_inner{
+	display: flex;
+	flex-direction: column;
+
+	width: 60%;
+	margin: auto;
+}
+
+.how-work__title h1{
+	color: white;
+}
+
+.how-work__content{
+	display: flex;
+	justify-content: space-around;
+}
+
+.how-work__item{
+	display: flex;
+	flex-direction: column;
+
+
+	width: 13%;
+	margin-bottom: 30px;
+
+	text-align: center;
+}
+
+.how-work__item img{
+	object-fit: contain;
+}
+
+.how-work__item p{
+	margin: 0;
+	padding: 0;
+}
+
+/*----------------------------------------*/
+
+#about{
+	display: flex;
+	justify-content: flex-end;
+
+	background-image: url(../img/aboutBgi.png);
+}
+
+.about__content{
+	background-color: black;
+}
