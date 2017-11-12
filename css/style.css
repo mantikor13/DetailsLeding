@@ -11,11 +11,16 @@ textarea{
 	resize: none;
 }
 
+.inner{
+	width: 60%;
+}
+
 #header{
-	height: 100vh;
 	background-image: url(../img/headerBgi.png);
 	background-position: center center;
 	background-size: cover;
+
+		overflow: hidden;
 }
 
 .header_inner{
@@ -23,7 +28,6 @@ textarea{
 	flex-direction: column;
 	align-items: center;
 
-	width: 60%;
 	margin: auto;
 	color: #C5C5C5;
 }
@@ -31,13 +35,20 @@ textarea{
 .header__header{
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
+
+	position: relative;
 
 	width: 100%;
 	margin-top: 30px;
 }
 
 .header__logo{
+	width: 20%;
+}
 
+.header__logo img{
+	width: 100%;
 }
 
 .header__nav{
@@ -51,18 +62,54 @@ textarea{
 	list-style: none;
 }
 
+.header__nav_mobile{
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+
+	width: 40px;
+	height: 25px;
+}
+
+.header__nav_mobile:hover{
+	cursor: pointer;
+}
+
+.nav-button{
+	display: block;
+	height: 5px;
+
+	border-radius: 2px;
+	border-color: white;
+	background-color: white;
+}
+
 .header__content{
 	width: 100%;
-	margin-top: 20vh;
+	margin-top: 45px;
+	margin-bottom: 300px;
 }
 
 .header__title h1{
+	position: relative;
+	left: -2000px;
+
 	color: white;
 	margin: 0;
+
+	transition: all 1s cubic-bezier(.17,.67,.16,1);
+}
+
+.h1_inside{
+	left: 0 !important;
 }
 
 .header__title h1 span{
 	color: #FFBA00;
+}
+
+.header__text{
+	opacity: 0;
 }
 
 
@@ -77,18 +124,18 @@ textarea{
 	display: flex;
 	flex-direction: column;
 
-	width: 60%;
-	height: 100vh;
 	margin: auto;
 }
 
 .details__content{
 	display: flex;
 	justify-content: space-around;
+
+	margin-bottom: 30px;
 }
 
 .details__pass{
-	width: 50%;
+	width: 44%;
 }
 
 .details__pass img{
@@ -96,7 +143,7 @@ textarea{
 }
 
 .details__form{
-	width: 35%;
+	width: 40%;
 }
 
 .details__form form{
@@ -128,8 +175,8 @@ textarea{
 	margin-bottom: 3px; 
 }
 
-.form-item input{
-	border: 2px solid #E8E8E8;
+.form-item input, .form-item textarea{
+	border: 0.5px solid #FFBA00;
 	border-radius: 3px;
 }
 
@@ -148,17 +195,19 @@ textarea{
 
 #how-work{
 	background-color: #FFBA00;
+	position: relative;
+	top: -3000px;
 }
 
 .how-work_inner{
 	display: flex;
 	flex-direction: column;
 
-	width: 60%;
 	margin: auto;
 }
 
 .how-work__title h1{
+	margin-bottom: 35px;
 	color: white;
 }
 
@@ -172,7 +221,7 @@ textarea{
 	flex-direction: column;
 
 
-	width: 13%;
+	width: 12%;
 	margin-bottom: 30px;
 
 	text-align: center;
@@ -194,8 +243,134 @@ textarea{
 	justify-content: flex-end;
 
 	background-image: url(../img/aboutBgi.png);
+	background-position: center center;
+	background-size: cover;
+
+	overflow: hidden;
+}
+
+.about__content_wrap{
+	position: relative;
+	right: -1000px;
+	width: 50%;
+}
+
+.opacity{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0.7;
 }
 
 .about__content{
+	position: relative;
+	z-index: 1;
+
+	margin-left: 40px;
+}
+
+.about__title h1, .about__text p{
+	opacity: 1;
+}
+
+.about__title{
+	color: #FFBA00;
+}
+
+.about__text{
+	color: #C5C5C5;
+}
+
+/*----------------------------------------*/
+
+#contact{
+	display: flex;
+	flex-direction: column;
+
 	background-color: black;
+}
+
+.contact__title, .contact__content{
+	margin: auto;
+	width: 60%;
+	color: white;
+}
+
+.contact__content{
+	display: flex;
+	justify-content: space-between;
+}
+
+.contact__content p{
+	font-size: 13px;
+	margin: 0;
+}
+
+.contact__content p:nth-child(1){
+	margin-bottom: 15px;
+
+	font-size: 18px;
+	font-weight: bold;
+}
+
+/*----------------------------------------*/
+
+@media screen and (max-width: 1180px) {
+ 
+	.inner{
+		width: 80%;
+	}
+
+}
+
+@media screen and (max-width: 992px) {
+
+	#header{
+		background-image: none;
+		background-color: black;
+	}
+
+	.header__nav{
+		flex-direction: column;
+
+		position: absolute;
+		right: -1000px;
+		top: 70px;
+
+		width: auto;
+
+		text-align: right;
+	}
+
+	.header__nav li{
+		margin-bottom: 10px;
+	}
+
+	.header__nav_mobile{
+		display: flex;
+	}
+
+	.header__content{
+		margin-bottom: 100px;
+		text-align: center;
+	}
+
+	.details__pass{
+		display: none;
+	}
+
+	.details__form{
+		width: 80%;
+	}
+
+	.about__content_wrap{
+		width: 100%;
+	}
+
+	.about__text{
+		text-align: justify;
+		margin-bottom: 40px;
+	}
+
 }
