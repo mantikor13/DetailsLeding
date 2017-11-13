@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 	let i = 0;
-	
+
 	$(".header__nav_mobile").click(function(){
 
 		if(i == 0){
@@ -14,52 +14,41 @@ $(document).ready(function(){
 
 	});
 
-	if($(document).width() > 992){
+	$("#header").find(".invisible").removeClass("invisible").addClass("visible");
 
-		let h1Array = $(".header__title h1");
+	(function abc(){
 
-	    let i = 0;
+			let j = 0;
 
-	    function go() {
+			let scrollBP = [];
 
-	        $(h1Array[i]).addClass("h1_inside");
+			let scrollBPBlock = [];
 
+			$("section").each(function(){
 
-	    };
+				scrollBP[j] = $(this).offset().top;
 
-	    let timer = setInterval(function(){
+				scrollBPBlock[j] = $(this);
 
-	        go();
+				j++;
 
-	        if(i < h1Array.length){
-	            i++;
-	        }else if(i == h1Array.length){
-	        	$(".header__text").animate({opacity: 1}, 2000);
-	        	i++;
-	    	}else{
-	            clearInterval(timer);
-	        }
-	        }, 800);
+			});
 
-	    let scrollTopHow = $("#details").offset().top + $("#details").height();
-	    let scrollTopAbout = $("#about").offset().top;
+			j = 1;
+
+			//console.log($(scrollBPBlock[j]).find(".invisible"));
 
 	    $(document).scroll(function(){
 
-	    	//console.log($(window).scrollTop() + $(window).height());
+				if($(window).scrollTop() + $(window).height() > scrollBP[j]){
+					let find = $(scrollBPBlock[j]).find(".invisible").removeClass("invisible").addClass("visible");
+					j++;
 
-	    	if($(window).scrollTop() + $(window).height() - 50 > scrollTopHow){
-	    		$("#how-work").addClass("how-work_visible");
-	    		//$("#how-work").animate({top: 0}, 1000);
-	    		//$("#how-work").css({"top": "0", "opacity": "1"})
-	    	}
+				}
 
-	    	if($(window).scrollTop() + $(window).height() + 200 > scrollTopAbout){
-	    		$(".about__content_wrap").animate({right: 0}, 1500);
-	    	}
+	    });
 
-	    })
-	}
+		})();
 
 	$('header a[href^="#"], header *[data-href^="#"], .pushy a[href^="#"], .pushy *[data-href^="#"]').on('click', function (e) {
 
