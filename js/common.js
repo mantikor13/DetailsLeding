@@ -59,5 +59,32 @@ $(document).ready(function(){
         $('html,body').stop().animate({scrollTop: $(d).offset().top}, t);
     });
 
+    $('#submit').click(function(){
+                // собираем данные с формы
+                var makr    = $('input[name="mark"]').val();
+                var model   = $('input[name="model"]').val();
+                var amount = $('input[name="amount"]').val();
+                var year    = $('input[name="year"]').val();
+                var detailsList    = $('textarea[name="detailsList"]').val();
+                var VIN    = $('input[name="VIN"]').val();
+                var name    = $('input[name="name"]').val();
+                var number    = $('input[name="number"]').val();
+                // отправляем данные
+                $.ajax({
+                    url: "mail.php", // куда отправляем
+                    type: "post", // метод передачи
+                    dataType: "json", // тип передачи данных
+                    data: { // что отправляем
+                        "user_name":    user_name,
+                        "user_email":   user_email,
+                        "text_comment": text_comment
+                    },
+                    // после получения ответа сервера
+                    success: function(data){
+                        $('.messages').html(data.result); // выводим ответ сервера
+                    }
+                });
+            });
+
 
 });

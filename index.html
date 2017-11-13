@@ -54,45 +54,45 @@
 					<img src="img/pass.png" alt="">
 				</div>
 				<div class="details__form">
-					<form action="">
+					<form method="post">
 						<div class="form-item">
 							<label>Марка</label>
-							<input type="text">
+							<input type="text" name="mark">
 						</div>
 						<div class="form-item">
 							<label>Модель</label>
-							<input type="text">
+							<input type="text" name="model">
 						</div>
 						<div class="form-item form-item_double">
 							<div>
 								<label>Объем двигателя</label>
-								<input type="text">
+								<input type="text" name="amount">
 							</div>
 							<div>
 								<label>Год</label>
-								<input type="text">
+								<input type="text" name="year">
 							</div>
 						</div>
 						<div class="form-item">
 							<label>Список запчастей</label>
-							<textarea rows="6" type="text"></textarea>
+							<textarea rows="6" type="text" name="detailsList"></textarea>
 						</div>
 						<div class="form-item">
 							<label>VIN</label>
-							<input type="text">
+							<input type="text" name="VIN">
 						</div>
 						<div class="form-item form-item_double">
 							<div>
 								<label>Ваше имя</label>
-								<input type="text">
+								<input type="text" name="name">
 							</div>
 							<div>
 								<label>Телефон</label>
-								<input type="text">
+								<input type="text" name="number">
 							</div>
 						</div>
 						<div class="form-item">
-							<button>Заказать</button>
+							<input type="submit" value="Заказать" id="submit">
 						</div>
 					</form>
 				</div>
@@ -143,14 +143,13 @@
 	</section>
 
 	<section id="contact">
-		<div class="contact__title inner">
+		<div class="contact__title inner transition invisible">
 			<h1>Контакты</h1>
 		</div>
-		<div class="map">
+		<div class="map transition invisible">
 			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2565.979450320891!2d36.25482231514902!3d49.97424392944449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127a080b40caced%3A0x9c2b5baab049d81c!2z0L_RgNC-0YHQvy4g0JPQsNCz0LDRgNC40L3QsCwgNDMvMSwg0KXQsNGA0YzQutC-0LIsINCl0LDRgNGM0LrQvtCy0YHQutCw0Y8g0L7QsdC70LDRgdGC0Yw!5e0!3m2!1sru!2sua!4v1510586665492" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 		</div>
-		<div class="contact__map"></div>
-		<div class="contact__content inner">
+		<div class="contact__content inner transition invisible">
 			<div class="contact__item">
 				<p>Адрес</p>
 				<p>г. Харьков,</br> пр. Гагарина 43/1</p>
