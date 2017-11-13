@@ -48,8 +48,10 @@ $(document).ready(function(){
 
 	    	//console.log($(window).scrollTop() + $(window).height());
 
-	    	if($(window).scrollTop() + $(window).height() + 50 > scrollTopHow){
-	    		$("#how-work").animate({top: 0}, 1000);
+	    	if($(window).scrollTop() + $(window).height() - 50 > scrollTopHow){
+	    		$("#how-work").addClass("how-work_visible");
+	    		//$("#how-work").animate({top: 0}, 1000);
+	    		//$("#how-work").css({"top": "0", "opacity": "1"})
 	    	}
 
 	    	if($(window).scrollTop() + $(window).height() + 200 > scrollTopAbout){
@@ -58,6 +60,15 @@ $(document).ready(function(){
 
 	    })
 	}
+
+	$('header a[href^="#"], header *[data-href^="#"], .pushy a[href^="#"], .pushy *[data-href^="#"]').on('click', function (e) {
+
+        e.preventDefault();
+
+        let t = 1000;
+        var d = $(this).attr('data-href') ? $(this).attr('data-href') : $(this).attr('href');
+        $('html,body').stop().animate({scrollTop: $(d).offset().top}, t);
+    });
 
 
 });

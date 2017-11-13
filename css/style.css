@@ -1,5 +1,6 @@
 body{
 	margin: 0;
+	background-color: #E8E8E8;
 }
 
 h1{
@@ -35,7 +36,6 @@ textarea{
 .header__header{
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
 
 	position: relative;
 
@@ -56,10 +56,34 @@ textarea{
 	justify-content: space-between;
 
 	width: 70%;
+	height: 75px;
 	margin: 0;
 	padding: 0;
 
 	list-style: none;
+}
+
+.header__nav a{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	height: 100%;
+
+	color: #C5C5C5;
+	text-decoration: none;
+}
+
+.header__nav a::after{
+	content: "";
+	border-bottom: 1px solid white;
+	width: 0; 
+
+	transition: all 0.5s ease-in-out;
+}
+
+.header__nav a:hover::after{
+	width: 100%;
 }
 
 .header__nav_mobile{
@@ -178,6 +202,8 @@ textarea{
 .form-item input, .form-item textarea{
 	border: 0.5px solid #FFBA00;
 	border-radius: 3px;
+
+	padding: 2px 6px;
 }
 
 .form-item button{
@@ -197,6 +223,14 @@ textarea{
 	background-color: #FFBA00;
 	position: relative;
 	top: -3000px;
+	opacity: 0;
+
+	transition: top 0.7s ease-out, opacity 1.5s ease-out;
+}
+
+.how-work_visible{
+	top: 0 !important;
+	opacity: 1 !important;
 }
 
 .how-work_inner{
