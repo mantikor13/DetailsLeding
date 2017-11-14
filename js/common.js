@@ -5,10 +5,10 @@ $(document).ready(function(){
 	$(".header__nav_mobile").click(function(){
 
 		if(i == 0){
-			$(".header__nav").animate({'right':'0px'},500, "swing");
+			$(".nav_mobile__content").addClass("nav_mobile__content-active");
 			i = 1;
 		}else{
-			$(".header__nav").animate({'right':'-1000px'},500);
+			$(".nav_mobile__content").removeClass("nav_mobile__content-active");
 			i = 0;
 		}
 
@@ -46,26 +46,31 @@ $(document).ready(function(){
 
 				};
 
-				let i = 0;
-
-				if($(window).scrollTop() + $(window).height() > $("#contact").offset().top && i == 0){
+				if($(window).scrollTop() + $(window).height() > $("#contact").offset().top + 200){
 
 					let topNewCoor = $(window).scrollTop() + $(window).height();
 
-					$(".callback").css("position","absolute");
-					$(".callback").css("top", topNewCoor);
-
-					i = 1;
+					$(".callback").hide(500)
 
 				}else{
-					$(".callback").css("position","fixed");
-
-					i = 0;
+					$(".callback").show(500);
 				}
 
 	    });
 
 		})();
+
+	$(".callback").click(function(){
+
+		$(".modal").addClass("modal_active");
+
+	});
+
+	$(".modal-close").click(function(){
+
+		$(".modal").removeClass("modal_active");
+
+	});
 
 	$('header a[href^="#"], header *[data-href^="#"], .pushy a[href^="#"], .pushy *[data-href^="#"]').on('click', function (e) {
 
