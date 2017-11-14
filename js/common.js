@@ -44,6 +44,23 @@ $(document).ready(function(){
 					let find = $(scrollBPBlock[j]).find(".invisible").removeClass("invisible").addClass("visible");
 					j++;
 
+				};
+
+				let i = 0;
+
+				if($(window).scrollTop() + $(window).height() > $("#contact").offset().top && i == 0){
+
+					let topNewCoor = $(window).scrollTop() + $(window).height();
+
+					$(".callback").css("position","absolute");
+					$(".callback").css("top", topNewCoor);
+
+					i = 1;
+
+				}else{
+					$(".callback").css("position","fixed");
+
+					i = 0;
 				}
 
 	    });
@@ -59,32 +76,18 @@ $(document).ready(function(){
         $('html,body').stop().animate({scrollTop: $(d).offset().top}, t);
     });
 
-    $('#submit').click(function(){
-                // собираем данные с формы
-                var makr    = $('input[name="mark"]').val();
-                var model   = $('input[name="model"]').val();
-                var amount = $('input[name="amount"]').val();
-                var year    = $('input[name="year"]').val();
-                var detailsList    = $('textarea[name="detailsList"]').val();
-                var VIN    = $('input[name="VIN"]').val();
-                var name    = $('input[name="name"]').val();
-                var number    = $('input[name="number"]').val();
-                // отправляем данные
-                $.ajax({
-                    url: "mail.php", // куда отправляем
-                    type: "post", // метод передачи
-                    dataType: "json", // тип передачи данных
-                    data: { // что отправляем
-                        "user_name":    user_name,
-                        "user_email":   user_email,
-                        "text_comment": text_comment
-                    },
-                    // после получения ответа сервера
-                    success: function(data){
-                        $('.messages').html(data.result); // выводим ответ сервера
-                    }
-                });
-            });
+		$("#form").submit(function() { //устанавливаем событие отправки для формы с id=form
+            var form_data = $(this).serialize(); //собераем все данные из формы
+            $.ajax({
+            type: "POST", //Метод отправки
+            url: "mail.php", //путь до php фаила отправителя
+            data: form_data,
+            success: function() {
+                   //код в этом блоке выполняется при успешной отправке сообщения
+                   alert("Ваше сообщение отпрвлено!");
+            }
+    });
 
+		});
 
 });

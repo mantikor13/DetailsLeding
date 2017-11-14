@@ -1,33 +1,27 @@
-<?php
-$method = $_SERVER['REQUEST_METHOD'];
-//Script Foreach
-$c = true;
-if ( $method === 'POST' ) {
-	$mark = trim($_POST["mark"]);
-	$model = trim($_POST["model"]);
-	$amount  = trim($_POST["amount"]);
-	$detailsList = trim($_POST["detailsList"]);
-	$VIN = trim($_POST["VIN"]);
-	$name = trim($_POST["name"]);
-	$number = trim($_POST["number"]);
-	foreach ( $_POST as $key => $value ) {
-		if ( $value != "" && $key != "mark" && $key != "model" && $key != "amount" && $key != "detailsList" && $key != "VIN" && $key != "name" && $key != "number") {
-			$message .= "
-			" . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
-			<td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$key</b></td>
-			<td style='padding: 10px; border: #e9e9e9 1px solid;'>$value</td>
-		</tr>
-		";
-	}
+<?
+if((isset($_POST['makr'])&&$_POST['mark']!="")&&(isset($_POST['model'])&&$_POST['model']!="")
+	&&(isset($_POST['amount'])&&$_POST['amount']!="")&&(isset($_POST['year'])&&$_POST['year']!="")
+	&&(isset($_POST['detailsList'])&&$_POST['detailsList']!="")&&(isset($_POST['VIN'])&&$_POST['VIN']!="")
+	&&(isset($_POST['name'])&&$_POST['name']!="")&&(isset($_POST['number'])&&$_POST['number']!="")){ //Проверка отправилось ли наше поля name и не пустые ли они
+        $to = 'romakrut333bk@gmail.com'; //Почта получателя, через запятую можно указать сколько угодно адресов
+        $subject = 'Заказ деталей'; //Загаловок сообщения
+        $message = '
+                <html>
+                    <head>
+                        <title>'.$subject.'</title>
+                    </head>
+                    <body>
+												<p>Имя: '.$_POST['mark'].'</p>
+												<p>Имя: '.$_POST['model'].'</p>
+												<p>Имя: '.$_POST['amount'].'</p>
+												<p>Имя: '.$_POST['year'].'</p>
+												<p>Имя: '.$_POST['detailsList'].'</p>
+												<p>Имя: '.$_POST['VIN'].'</p>
+                        <p>Имя: '.$_POST['name'].'</p>
+                        <p>Телефон: '.$_POST['number'].'</p>
+                    </body>
+                </html>'; //Текст нащего сообщения можно использовать HTML теги
+        $headers  = "Content-type: text/html; charset=utf-8"; //Кодировка письма
+        mail($to, $subject, $message, $headers); //Отправка письма с помощью функции mail
 }
-}
-$message = "<table style='width: 100%;'>$message</table>";
-function adopt($text) {
-	return '=?UTF-8?B?'.base64_encode($text).'?=';
-}
-$headers = "MIME-Version: 1.0" . PHP_EOL .
-$admin_email = "romakrut333bk@gmail.com" .
-"Content-Type: text/html; charset=utf-8" . PHP_EOL .
-'From: '.adopt($project_name).' <'.$admin_email.'>' . PHP_EOL .
-'Reply-To: '.$admin_email.'' . PHP_EOL;
-mail($admin_email, adopt($mark), $message, $headers );
+?>

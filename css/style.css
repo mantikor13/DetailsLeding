@@ -1,9 +1,27 @@
+@font-face{
+
+font-family: 'GothamProBold';
+
+src: url('../fonts/GothamProBlack.woff');
+}
+
+@font-face{
+
+font-family: 'GothamPro';
+
+src: url('../fonts/GOTHAMPROLIGHT.ttf');
+}
+
 body{
 	margin: 0;
 	background-color: #E8E8E8;
+
+	font-family: 'GothamPro';
 }
 
 h1{
+	font-family: 'GothamProBold';
+
 	text-transform: uppercase;
 	font-size: 35px;
 }
@@ -35,6 +53,16 @@ textarea{
 
 .inner{
 	width: 60%;
+}
+
+.callback{
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
+	z-index: 2;
+
+	width: 80px;
+	height: 80px;
 }
 
 #header{
@@ -76,7 +104,7 @@ textarea{
 	display: flex;
 	justify-content: space-between;
 
-	width: 70%;
+	width: 75%;
 	height: 75px;
 	margin: 0;
 	padding: 0;
@@ -155,6 +183,10 @@ textarea{
 	color: #FFBA00;
 }
 
+.header__text p{
+	font-weight: lighter;
+}
+
 
 /*-----------------------------------------------*/
 
@@ -211,7 +243,7 @@ textarea{
 .form-item_double div{
 	display: flex;
 	flex-direction: column;
-	width: 45%
+	width: 46%
 }
 
 .form-item label{
@@ -259,24 +291,27 @@ textarea{
 .how-work__content{
 	display: flex;
 	justify-content: space-around;
+	flex-wrap: wrap;
 }
 
 .how-work__item{
 	display: flex;
 	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
 
-
-	width: 12%;
+	width: 10%;
 	margin-bottom: 30px;
 
-	text-align: center;
 }
 
 .how-work__item img{
+	width: 100%;
 	object-fit: contain;
 }
 
 .how-work__item p{
+		text-align: center;
 	margin: 0;
 	padding: 0;
 }
@@ -347,7 +382,10 @@ textarea{
 }
 
 .contact__content p{
+	display: flex;
+	align-items: center;
 	font-size: 13px;
+	padding: 10px;
 	margin: 0;
 }
 
@@ -356,6 +394,11 @@ textarea{
 
 	font-size: 18px;
 	font-weight: bold;
+}
+
+.contact__content p img{
+	margin-left: 10px;
+	height: 30px;
 }
 
 /*----------------------------------------*/
@@ -369,6 +412,10 @@ textarea{
 }
 
 @media screen and (max-width: 992px) {
+
+	h1{
+		font-size: 25px;
+	}
 
 	#header{
 		background-image: none;
@@ -410,6 +457,14 @@ textarea{
 		width: 80%;
 	}
 
+	.how-work__item{
+		width: 40%;
+	}
+
+	.how-work__item img{
+		width: 30%;
+	}
+
 	.about__content_wrap{
 		width: 100%;
 	}
@@ -419,13 +474,17 @@ textarea{
 		margin-bottom: 40px;
 	}
 
+	.contact__content{
+		flex-direction: column;
+	}
+
+	.contact__content p:nth-child(1){
+		margin-bottom: 0;
+	}
+
 }
 
 @media screen and (max-width: 800px) {
-
-	h1{
-		font-size: 25px;
-	}
 
 	.header__content{
 		margin-bottom: 50px;
