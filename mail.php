@@ -1,5 +1,5 @@
-<?
-if((isset($_POST['makr'])&&$_POST['mark']!="")&&(isset($_POST['model'])&&$_POST['model']!="")
+<?php
+if((isset($_POST['mark'])&&$_POST['mark']!="")&&(isset($_POST['model'])&&$_POST['model']!="")
 	&&(isset($_POST['amount'])&&$_POST['amount']!="")&&(isset($_POST['year'])&&$_POST['year']!="")
 	&&(isset($_POST['detailsList'])&&$_POST['detailsList']!="")&&(isset($_POST['VIN'])&&$_POST['VIN']!="")
 	&&(isset($_POST['name'])&&$_POST['name']!="")&&(isset($_POST['number'])&&$_POST['number']!="")){ //Проверка отправилось ли наше поля name и не пустые ли они
@@ -23,5 +23,6 @@ if((isset($_POST['makr'])&&$_POST['mark']!="")&&(isset($_POST['model'])&&$_POST[
                 </html>'; //Текст нащего сообщения можно использовать HTML теги
         $headers  = "Content-type: text/html; charset=utf-8"; //Кодировка письма
         mail($to, $subject, $message, $headers); //Отправка письма с помощью функции mail
+				echo "string";
 }
 ?>

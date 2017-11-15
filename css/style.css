@@ -571,7 +571,7 @@ input[type="submit"]:hover{
 .contact__content p{
 	display: flex;
 	align-items: center;
-	font-size: 13px;
+	font-size: 15px;
 	padding: 10px;
 	margin: 0;
 }
@@ -579,8 +579,13 @@ input[type="submit"]:hover{
 .contact__content p:nth-child(1){
 	margin-bottom: 15px;
 
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: bold;
+}
+
+.contact__item a{
+	text-decoration: none;
+	color: #fff;
 }
 
 .contact__content p img{
@@ -632,6 +637,10 @@ input[type="submit"]:hover{
 		background-color: black;
 	}
 
+	.header__logo{
+		width: 40%;
+	}
+
 	.header__nav{
 		display: none;
 	}
@@ -680,6 +689,14 @@ input[type="submit"]:hover{
 
 	.contact__content p:nth-child(1){
 		margin-bottom: 0;
+	}
+
+}
+
+@media screen and (max-width: 321px) {
+
+	.header__title h1{
+		font-size: 20px;
 	}
 
 }

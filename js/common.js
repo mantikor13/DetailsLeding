@@ -90,15 +90,31 @@ $(document).ready(function(){
 
 		})();
 
+		let mi = 0;
+
 	$(".callback").click(function(){
 
-		$(".modal").addClass("modal_active");
+		if(mi == 0){
+
+			$(".modal").addClass("modal_active");
+
+			mi = 1;
+
+		}else{
+
+			$(".modal").removeClass("modal_active");
+
+			mi = 0;
+
+		}
 
 	});
 
 	$(".modal-close").click(function(){
 
 		$(".modal").removeClass("modal_active");
+
+		mi = 0;
 
 	});
 
@@ -111,16 +127,20 @@ $(document).ready(function(){
         $('html,body').stop().animate({scrollTop: $(d).offset().top}, t);
     });
 
-		$("#form").submit(function() { //устанавливаем событие отправки для формы с id=form
+		$("#form").submit(function(e) { //устанавливаем событие отправки для формы с id=form
+						e.preventDefault();
+
             var form_data = $(this).serialize(); //собераем все данные из формы
+
+
             $.ajax({
-            type: "POST", //Метод отправки
-            url: "mail.php", //путь до php фаила отправителя
-            data: form_data,
-            success: function() {
-                   //код в этом блоке выполняется при успешной отправке сообщения
-                   alert("Ваше сообщение отпрвлено!");
-            }
+	            type: "POST", //Метод отправки
+	            url: "mail.php", //путь до php фаила отправителя
+	            data: form_data,
+	            success: function() {
+	                   //код в этом блоке выполняется при успешной отправке сообщения
+	                   alert("Ваше сообщение отпрвлено!");
+	            }
     });
 
 		});
