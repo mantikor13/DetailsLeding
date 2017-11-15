@@ -16,12 +16,12 @@
 	<div class="modal">
 		<div class="modal_inner">
 			<div class="modal-close">
-				<img src="img/modal-close.png" alt="">
+					<img src="img/modal-close.png" alt="">
 			</div>
 			<div class="modal__title">
 				<p>Оставьте свои контактные данные и мы перезвоним</p>
 			</div>
-			<div class="modal__form">
+			<form id="modal__form">
 				<div class="modal__form-item">
 					<label for="modal-name">Ваше имя</label>
 					<input type="text" name="modal-name">
@@ -34,9 +34,9 @@
 					<label for="modal-subject">Комментарий</label>
 					<textarea name="modal-subject" rows="10"></textarea>
 
-					<input type="submit" value="Отправить" id="modal-submit">
+					<button class="form__btn" type="submit">Отправить</button>
 				</div>
-			</div>
+			</form>
 		</div>
 	</div>
 
@@ -44,7 +44,9 @@
 	<div class="header_inner inner">
 		<header class="header__header">
 			<div class="header__logo">
-				<img src="img/logo.png" alt="">
+				<a href="http://sv-auto.tech">
+					<img src="img/logo.png" alt="">
+				</a>
 			</div>
 			<nav class="header__nav">
 				<a href="#header"><li class="header__nav-item">Главная</li></a>
@@ -133,7 +135,7 @@
 							</div>
 						</div>
 						<div class="form-item">
-							<button type="submit">Заказать</button>
+							<button class="form__btn" type="submit">Заказать</button>
 						</div>
 					</form>
 				</div>
@@ -204,7 +206,7 @@
 				<p>Номера</p>
 				<p><a href="tel:+380983544359">+38 (098) 354 43 59</a><img src="img/kievstar.png" alt=""></p>
 				<p><a href="tel:+380732675004">+38 (073) 267 50 04</a><img src="img/life.png" alt=""></p>
-				<p><a href="tel:+380952527001">+38 (095) 252 70 01</a><img src="img/vodafon.png" alt=""></p>
+				<p><a href="tel:+380952527001">+38 (095) 252 70 01</a><img src="img/vodafone.jpg" alt=""></p>
 			</div>
 		</div>
 	</section>
