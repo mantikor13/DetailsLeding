@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Document</title>
 	<link rel="stylesheet" href="css/style.css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -11,6 +12,33 @@
 <body>
 
 	<img class="callback" src="img/callback.gif" alt="">
+
+	<div class="modal">
+		<div class="modal_inner">
+			<div class="modal-close">
+				<img src="img/modal-close.png" alt="">
+			</div>
+			<div class="modal__title">
+				<p>Оставьте свои контактные данные и мы перезвоним</p>
+			</div>
+			<div class="modal__form">
+				<div class="modal__form-item">
+					<label for="modal-name">Ваше имя</label>
+					<input type="text" name="modal-name">
+				</div>
+				<div class="modal__form-item">
+					<label for="modal-number">Ваш номер</label>
+					<input type="text" name="modal-number">
+				</div>
+				<div class="modal__form-item modal__form-item_text">
+					<label for="modal-subject">Комментарий</label>
+					<textarea name="modal-subject" rows="10"></textarea>
+
+					<input type="submit" id="modal-submit">
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<section id="header">
 	<div class="header_inner inner">
@@ -26,9 +54,20 @@
 				<a href="#contact"><li class="header__nav-item">Контакты</li></a>
 			</nav>
 			<div class="header__nav_mobile">
-				<span class="nav-button"></span>
-				<span class="nav-button"></span>
-				<span class="nav-button"></span>
+				<div class="nav-btn">
+					<span class="nav-line"></span>
+					<span class="nav-line"></span>
+					<span class="nav-line"></span>
+				</div>
+				<div class="nav_mobile-wrap">
+					<nav class="nav_mobile__content">
+						<a href="#header"><li class="header__nav-item">Главная</li></a>
+						<a href="#details"><li class="header__nav-item">Подбор запчастей</li></a>
+						<a href="#how-work"><li class="header__nav-item">Оплата доставка</li></a>
+						<a href="#about"><li class="header__nav-item">О компании</li></a>
+						<a href="#contact"><li class="header__nav-item">Контакты</li></a>
+					</nav>
+				</div>
 			</div>
 		</header>
 		<div class="header__content transition invisible">
@@ -67,7 +106,7 @@
 						</div>
 						<div class="form-item form-item_double">
 							<div>
-								<label>Объем двигателя</label>
+								<label>Объем двиг.</label>
 								<input type="text" name="amount">
 							</div>
 							<div>
