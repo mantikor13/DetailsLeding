@@ -409,7 +409,7 @@ textarea{
 }
 
 .details__pass{
-	width: 44%;
+	width: 50%;
 }
 
 .details__pass img{
@@ -443,6 +443,17 @@ textarea{
 	display: flex;
 	flex-direction: column;
 	width: 46%
+}
+
+.arrow_wrap{
+	position: relative;
+}
+
+.arrow_wrap img{
+	position: absolute;
+	width: 120px;
+	bottom: 10px;
+	left: -130px;
 }
 
 .form-item label{
@@ -676,6 +687,10 @@ textarea{
 
 	.details__form{
 		width: 80%;
+	}
+
+	.arrow_wrap img{
+		display: none;
 	}
 
 	.how-work__item{
