@@ -163,4 +163,27 @@ $(document).ready(function(){
 
 		});
 
+		let yearArray = [];
+		let amountArray = [];
+		let opt;
+
+		for (let i = 1930; i <= 2017; i++) {
+			if(i == 2017){
+				opt = '<option selected>' + i + '</option>';
+				yearArray.push(opt);
+			}else{
+				opt = '<option>' + i + '</option>';
+				yearArray.push(opt);
+			}
+		}
+
+		$("[name = year]").html(yearArray);
+
+		for (let i = 0; i <= 95; i++) {
+
+			opt = '<option>' + (i/10 + 0.5) + " " + "л." + '</option>';
+			amountArray.push(opt);
+		}
+
+		$("[name = amount]").html(amountArray);
 });

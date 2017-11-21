@@ -4,7 +4,8 @@
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>SV-Auto</title>
+	<meta name="description" content="У нас вы можете купить автозапчасти для любого авто по лучшим ценам на рынке!" />
+	<title>SV-Auto - Выбор автозапчастей</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 
@@ -24,15 +25,15 @@
 			<form id="modal__form">
 				<div class="modal__form-item">
 					<label for="modal-name">Ваше имя</label>
-					<input type="text" name="modal-name">
+					<input type="text" name="modal-name" required>
 				</div>
 				<div class="modal__form-item">
 					<label for="modal-number">Ваш номер</label>
-					<input type="text" name="modal-number">
+					<input type="text" name="modal-number" required>
 				</div>
 				<div class="modal__form-item modal__form-item_text">
 					<label for="modal-subject">Комментарий</label>
-					<textarea name="modal-subject" rows="10"></textarea>
+					<textarea name="modal-subject" rows="10" required></textarea>
 
 					<button class="form__btn" type="submit">Отправить</button>
 				</div>
@@ -74,14 +75,14 @@
 		</header>
 		<div class="header__content transition invisible">
 			<div class="header__title">
-				<h1><span>отличное</span> качество</h1>
-				<h1><span>низкие</span> цены</h1>
+				<h2><span>отличное</span> качество<br>
+				<span>низкие</span> цены</h2>
 			</div>
 			<div class="header__text">
-				<p>Оригинальные запчасти<br>
+				<h1>Оригинальные запчасти<br>
 					для Вашего автомобиля<br>
 					по самым выгодным ценам
-				</p>
+				</h1>
 			</div>
 		</div>
 	</div>
@@ -90,7 +91,7 @@
 	<section id="details">
 		<div class="details_inner inner">
 			<div class="details__title transition invisible">
-				<h1>подбор запчастей</h1>
+				<h2>подбор запчастей</h2>
 			</div>
 			<div class="details__content transition invisible">
 				<div class="details__pass">
@@ -110,16 +111,20 @@
 						<div class="form-item form-item_double">
 							<div>
 								<label>Объем двиг.</label>
-								<input type="text" name="amount">
+								<select  name="amount">
+
+                                </select>
+
 							</div>
 							<div>
 								<label>Год</label>
-								<input type="text" name="year">
+								<select name="year">
+								</select>
 							</div>
 						</div>
 						<div class="form-item">
 							<label>Список запчастей</label>
-							<textarea rows="6" name="detailsList"></textarea>
+							<textarea rows="6" name="detailsList" required></textarea>
 						</div>
 						<div class="form-item arrow_wrap">
 							<img src="img/arrow.png" alt="">
@@ -129,11 +134,11 @@
 						<div class="form-item form-item_double">
 							<div>
 								<label>Ваше имя</label>
-								<input type="text" name="name">
+								<input type="text" name="name" required>
 							</div>
 							<div>
 								<label>Телефон</label>
-								<input type="text" name="number">
+								<input type="text" name="number" required>
 							</div>
 						</div>
 						<div class="form-item">
@@ -148,7 +153,7 @@
 	<section id="how-work">
 		<div class="how-work_inner inner">
 			<div class="how-work__title transition invisible">
-				<h1>Как мы работаем</h1>
+				<h2>Как мы работаем</h2>
 			</div>
 			<div class="how-work__content transition invisible">
 				<div class="how-work__item">
@@ -176,7 +181,7 @@
 				<div class="opacity"></div>
 				<div class="about__content">
 					<div class="about__title">
-						<h1>О компании</h1>
+						<h2>О компании</h2>
 					</div>
 					<div class="about__text inner">
 						<p>За десять лет на рынке мы обрели колоссальный опыт в подборе автозапчастей!</p>
@@ -189,7 +194,7 @@
 
 	<section id="contact">
 		<div class="contact__title inner transition invisible">
-			<h1>Контакты</h1>
+			<h2>Контакты</h2>
 		</div>
 		<div class="map transition invisible">
 			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2565.979450320891!2d36.25482231514902!3d49.97424392944449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127a080b40caced%3A0x9c2b5baab049d81c!2z0L_RgNC-0YHQvy4g0JPQsNCz0LDRgNC40L3QsCwgNDMvMSwg0KXQsNGA0YzQutC-0LIsINCl0LDRgNGM0LrQvtCy0YHQutCw0Y8g0L7QsdC70LDRgdGC0Yw!5e0!3m2!1sru!2sua!4v1510586665492" allowfullscreen></iframe>
@@ -215,6 +220,17 @@
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/common.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110005446-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-110005446-1');
+</script>
+
 
 </body>
 </html>
